@@ -1,0 +1,15 @@
+<p><a routerLink="/home">Ve trang chu</a> </p>
+<table>
+  <tr>Danh sach doc</tr>
+  <ng-container *ngFor="let book of bookList, index as i, trackBy: bookTrackByFn">
+    <tr *ngIf="book.read">
+      <td>
+        {{book.name}}
+      </td>
+      <td>
+        <button (click)="changeRead(book)">Doc lai</button>
+      </td>
+    </tr>
+  </ng-container>
+</table>
+<p><a routerLink="/readbook">Danh sach doc</a> </p>

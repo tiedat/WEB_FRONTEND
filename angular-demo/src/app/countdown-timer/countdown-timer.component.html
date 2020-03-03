@@ -1,0 +1,9 @@
+
+
+<h2>Countdown Timer:  {{remainingTime}}</h2>
+
+<input type="number" [value]="seconds" (change)="onChange($event.target.value)">
+<button   (click)="start()" value="Start">Start</button>
+<button  (click)="reset()" value="Reset">Reset</button>
+<button  (click)="stop()" value="Stop">Stop</button>
+<p>{{message}}</p>

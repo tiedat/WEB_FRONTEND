@@ -1,0 +1,70 @@
+<h2 class="text-center">User profile form</h2>
+<form class="row justify-content-md-center" #profileForm="ngForm" (ngSubmit)="onSubmit(profileForm)" novalidate>
+  <div class="col-md-8">
+    <!--  -------------------------------------------username--------------------------------------------------------->
+    <div class="form-group row">
+      <label for="example-text-input" class="col-md-2 col-form-label">Name:</label>
+      <div class="col-md-10">
+        <input [(ngModel)]="profile.username" #username="ngModel" name="username" required minlength="6"
+               class="form-control" type="text"
+               id="example-text-input">
+      </div>
+    </div>
+    <!--  -------------------------------------------Validate name---------------------------------------------------->
+    <div *ngIf="!username.valid && username.touched" class="alert alert-danger" role="alert">
+      <p *ngIf="username?.errors?.required">Username is required</p>
+      <p *ngIf="username?.errors?.minlength">The input must be of minimum length 6 characters</p>
+    </div>
+    <!--  -------------------------------------------email--------------------------------------------------------->
+    <div class="form-group row">
+      <label for="example-email-input" class="col-md-2 col-form-label">Email:</label>
+      <div class="col-md-10">
+        <input [(ngModel)]="profile.email" name="email" class="form-control" type="email" id="example-email-input">
+      </div>
+    </div>
+    <!--  -------------------------------------------Social--------------------------------------------------------->
+    <fieldset ngModelGroup="social">
+      <!--  -------------------------------------------Fb--------------------------------------------------------->
+      <div class="form-group row">
+        <label for="example-url-fb" class="col-md-2 col-form-label">Facebook:</label>
+        <div class="col-md-10">
+          <input [(ngModel)]="profile.facebook" name="facebook" class="form-control" type="url" id="example-url-fb">
+        </div>
+      </div>
+      <!--  -------------------------------------------Twitter--------------------------------------------------------->
+      <div class="form-group row">
+        <label for="example-url-twt" class="col-md-2 col-form-label">Twitter:</label>
+        <div class="col-md-10">
+          <input [(ngModel)]="profile.twitter" name="twitter" class="form-control" type="url" id="example-url-twt">
+        </div>
+      </div>
+      <!--  -------------------------------------------Website--------------------------------------------------------->
+      <div class="form-group row">
+        <label for="example-url-web" class="col-md-2 col-form-label">Website:</label>
+        <div class="col-md-10">
+          <input [(ngModel)]="profile.website" name="website" class="form-control" type="url" id="example-url-web">
+        </div>
+      </div>
+    </fieldset>
+    <!--  -------------------------------------------Tel--------------------------------------------------------->
+    <div class="form-group row">
+      <label for="example-tel-input" class="col-md-2 col-form-label">Tel:</label>
+      <div class="col-md-10">
+        <input [(ngModel)]="profile.tel" name="tel" class="form-control" type="tel" id="example-tel-input">
+      </div>
+    </div>
+    <!--  -------------------------------------------Submit--------------------------------------------------------->
+    <div class="form-group row">
+      <div class="col-md-10 offset-md-2">
+        <button class="btn btn-primary" type="submit" [disabled]="profileForm.invalid">Submit</button>
+      </div>
+    </div>
+  </div>
+</form>
+
+<pre>
+  {{profileForm.value | json}}
+</pre>
+<pre>
+  {{profile | json}}
+</pre>

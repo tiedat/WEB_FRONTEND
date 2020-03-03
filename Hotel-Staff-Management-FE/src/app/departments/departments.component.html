@@ -1,0 +1,56 @@
+<div class="search">
+    <div class="row">
+        <div id="custom-search-input">
+            <div *ngIf="isShow"
+                 class="alert {{ (isSuccess) ? 'alert-success' : 'alert-danger' }}"
+                 role="alert">
+                {{message}}
+            </div>
+            <form [formGroup]="departmentForm">
+                <div class="input-group col-md-12" style="text-align: center">
+                    <input type="text" class="search-query form-control" placeholder="Tìm kiếm theo họ và tên đệm"
+                           formControlName="departmentName" style="width: 400px"/>
+                    <span class="input-group-btn">
+                        <button class="btn btn-danger" type="button" style="width: 200px"
+                                (click)="findByName()">
+                            Search
+                        </button>
+          </span>
+                </div>
+                <br>
+            </form>
+        </div>
+    </div>
+</div>
+<div>
+    <div class="row col-md-12 text-center col-md-offset-2 custyle">
+        <table class="table table-striped custab">
+            <thead>
+            <tr>
+                <th>Index</th>
+                <th>Name</th>
+                <th>Delete</th>
+                <th>Edit</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let d of departmentList, index as i, trackBy: trackByFn">
+                <td>{{i + 1}}</td>
+                <td>{{d.name}}</td>
+                <td>
+                    <button class="btn btn-danger btn-xs" (click)="delete(d.id)"><span
+                            class="glyphicon glyphicon-remove"></span>
+                        Delete
+                    </button>
+                </td>
+                <td>
+                    <button class="btn btn-primary btn-xs" [routerLink]="['/departments', d.id]">
+                        <span class="glyphicon glyphicon-remove"></span>
+                        Edit
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

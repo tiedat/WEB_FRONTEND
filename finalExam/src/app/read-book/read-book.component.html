@@ -1,0 +1,19 @@
+
+<p><a routerLink="/home">Ve trang chu</a> </p>
+<table>
+  <tr>Danh sach doc</tr>
+  <ng-container *ngFor="let book of bookList, index as i, trackBy: bookTrackByFn">
+    <tr *ngIf="!book.read">
+      <td>
+        {{book.name}}
+      </td>
+      <td>
+        <button (click)="changeRead(book)">Chua doc</button>
+      </td>
+    </tr>
+  </ng-container>
+  <tr><input class="form-control" [formControl]="name"> <button (click)="addBook()">Them</button></tr>
+</table>
+<p><a routerLink="/readed">Danh sach da doc</a> </p>
+
+

@@ -1,0 +1,123 @@
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+}
+
+div {
+    display: block;
+}
+
+.section-header {
+    position: relative;
+    padding: 16px 0;
+    border-bottom: 1px solid #f0f0f0;
+    z-index: 10;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: .9375rem;
+    padding-right: .9375rem;
+    max-width: 720px;
+}
+
+.row {
+    margin-left: -.9375rem;
+    margin-right: -.9375rem;
+}
+
+div.col-xs-12.col-md-2 {
+    position: relative;
+    box-sizing: border-box;
+    min-height: 1px;
+    padding-left: .9375rem;
+    padding-right: .9375rem;
+    float: left;
+    width: 16.66667%;
+    transform: translateY(5px);
+}
+
+div.col-xs-12.col-md-7 {
+    position: relative;
+    box-sizing: border-box;
+    min-height: 1px;
+    padding-left: .9375rem;
+    padding-right: .9375rem;
+    float: left;
+    width: 58.33333%;
+    transform: translateY(5px);
+    text-align: center;
+}
+
+div.search.col-xs-12.col-md-3 {
+    box-sizing: border-box;
+    min-height: 1px;
+    padding-left: .9375rem;
+    padding-right: .9375rem;
+    float: left;
+    width: 25%;
+    position: relative;
+}
+
+div.menu {
+    text-align: center;
+    margin: 0;
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+}
+
+.section-header .col-md-7 li.cat:before {
+    content: url(https://sstruyen.com/assets/img/folder.png);
+    font-size: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.section-header .col-md-7 li a {
+    background-color: transparent;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #000;
+    transition: all .5s;
+}
+
+li.cat {
+    list-style: none;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 24px;
+    position: relative;
+}
+
+.section-header .col-md-7 li .sub-menu {
+    box-shadow: -2px 2px 81px -27px rgba(0, 0, 0, .3);
+    position: absolute;
+    width: 120%;
+    top: 45px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s;
+}
+
+.section-header .col-md-7 li .sub-menu li {
+    visibility: hidden;
+    vertical-align: middle;
+    padding: 0 24px;
+    display: block;
+    background-color: #f0f0f0;
+    text-align: left;
+    line-height: 32px;
+    width: 100%;
+}
+
+
+
